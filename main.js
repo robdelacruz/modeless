@@ -9,13 +9,25 @@ let num_results = 0;
 
 search.focus();
 
-let all_notes = [];
-for (let i=0; i < _data.length; i++) {
-    let note = _data[i];
-    note.id = i;
-    all_notes.push(note);
+// Load localStorage to all_notes[].
+// If no localStorage notes, initialize with _data[]. 
+let ls_notes_val = localStorage.getItem("notes");
+if (ls_notes_val == null) {
+    ls_notes_val = JSON.stringify(_data);
+    localStorage.setItem("notes", ls_notes_val);
 }
+let all_notes = JSON.parse(ls_notes_val);
+for (let i=0; i < all_notes.length; i++) {
+    all_notes[i].id = i;
+}
+
 update_results(all_notes);
+
+// Sync all_notes[] to localStorage.
+function sync_to_local_storage() {
+    const ls_notes_val = JSON.stringify(all_notes);
+    localStorage.setItem("notes", ls_notes_val);
+}
 
 // Search for all notes containing q.
 function search_all_notes(q) {
@@ -204,6 +216,7 @@ function save_current_note() {
 
     const note = all_notes[noteid];
     note.body = note_entry.value;
+    sync_to_local_storage();
 
     if (results.selectedIndex >= 0) {
         const sel_option = results.options[results.selectedIndex]

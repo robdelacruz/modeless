@@ -1,11 +1,11 @@
 let _data = [{
-    "title": "Ken Williams quote",
-    "body": "I reserve the right to be biased, it makes life more interesting.",
+    "title": "Controls",
+    "body": "Start typing for incremental search.\nCTRL-ESC: Clear search\nCTRL-L: Select Search Text\nENTER: Create/Edit note\nUp/Down arrow: Select note",
 }, {
-    "title": "Gettysburg Address",
-    "body": "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.",
+    "title": "About Modeless",
+    "body": "Modeless is web-based notes viewer and editor based on Notational Velocity app (www.notational.net).\n",
 }, {
-    "title": "Lee Kuan Yew quote",
-    "body": "I am often accused of interfering in the private lives of citizens. Yes, if I did not, had I not done that, we wouldn't be here today. And I say without the slightest remorse, that we wouldn't be here, we would not have made economic progress, if we had not intervened on very personal matters - who your neighbour is, how you live, the noise you make, how you spit, or what language you use. We decide what is right. Never mind what the people think.",
+    "title": "Program Details",
+    "body": "Notes are saved locally. No data is sent to the server."
 },
 ];

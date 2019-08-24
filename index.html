@@ -6,10 +6,12 @@
 <title>modeless</title>
 <link rel="stylesheet" type="text/css" href="bulma.css">
 <style>
+#container { width: 800px; }
+select[name='results'] { width: 800px; }
 </style>
 </head>
 <body>
-<div class="container">
+<div id="container" class="container">
     <h1 class="title">modeless test</h1>
     <div class="field">
         <div class="control">
@@ -19,7 +21,7 @@
     <div class="field">
         <div class="control">
             <div class="select is-multiple is-small">
-                <select name="results" multiple size="4" style="width: 1000px;">
+                <select name="results" multiple size="4">
                 </select>
             </div>
         </div>
