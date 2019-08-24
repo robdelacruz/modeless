@@ -12,7 +12,7 @@ select[name='results'] { width: 800px; }
 </head>
 <body>
 <div id="container" class="container">
-    <h1 class="title">modeless test</h1>
+    <h1 class="title">Modeless Notes</h1>
     <div class="field">
         <div class="control">
             <input class="input is-medium" type="text" name="search"><br>
@@ -29,10 +29,26 @@ select[name='results'] { width: 800px; }
 
     <div class="field">
         <div class="control">
-            <textarea class="textarea is-small" rows="5" name="note" placeholder="note text here"></textarea>
+            <textarea class="textarea is-small" rows="10" name="note" placeholder="note text here"></textarea>
         </div>
     </div>
+
+    <div class="content is-small">
+        <h4>Keyboard Controls</h4>
+        <p><em>Start typing</em> to incrementally search notes.</p>
+        <p><strong>ESC</strong> clears the search and starts over.</p>
+        <p><strong>CTRL-L</strong> returns to search box text.</p>
+        <p><strong>Up/Down</strong> arrow keys to select from the matched notes.</p>
+        <p><strong>ENTER</strong> to edit selected note, or create a new note.</p>
+    </div>
+
+    <footer class="footer">
+        <div class="content has-text-centered is-small">
+            <p>Source: <a href="https://github.com/robdelacruz/modeless/">github.com/robdelacruz/modeless</a></p>
+        </div>
+    </footer>
 </div>
+
 
 <script src="data.js"></script>
 <script src="main.js"></script>
