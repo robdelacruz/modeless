@@ -46,6 +46,8 @@ function search_all_notes(q) {
 }
 
 document.addEventListener("keydown", function(e) {
+    console.log(`document keydown e.code = '${e.code}'`);
+
     // ESC clears everything: search box, selection, note edit box.
     if (e.code == "Escape") {
         e.preventDefault();
