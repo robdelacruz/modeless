@@ -46,10 +46,8 @@ function search_all_notes(q) {
 }
 
 document.addEventListener("keydown", function(e) {
-    console.log(`document keydown e.code = '${e.code}'`);
-
-    // ESC clears everything: search box, selection, note edit box.
-    if (e.code == "Escape") {
+    // ESC (or CTRL-`) clears everything: search box, selection, note edit box.
+    if (e.code == "Escape" || (e.ctrlKey && e.code == "Backquote")) {
         e.preventDefault();
 
         save_current_note();
@@ -75,11 +73,31 @@ document.addEventListener("keydown", function(e) {
         search.select();
         return;
     }
+
+    // CTRL-X deletes the selected note.
+    if (e.ctrlKey && e.code == "KeyX") {
+        e.preventDefault();
+
+        if (sel_idx == -1) {
+            return;
+        }
+        const noteid = results.options[sel_idx].getAttribute("data-noteid")
+        if (!noteid || noteid == "-1") {
+            return;
+        }
+        all_notes.splice(noteid, 1);
+        sync_to_local_storage();
+
+        search.value = "";
+        const found_notes = search_all_notes("");
+        update_results(found_notes);
+
+        search.focus();
+        return;
+    }
 });
 
 search.addEventListener("keydown", function(e) {
-    console.log(`search keydown e.code = '${e.code}'`);
-
     if (e.code == "ArrowDown" || e.code == "ArrowUp") {
         e.preventDefault();
 

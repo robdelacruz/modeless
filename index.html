@@ -12,7 +12,8 @@ select[name='results'] { width: 800px; }
 </head>
 <body>
 <div id="container" class="container">
-    <h1 class="title">Modeless Notes</h1>
+    <h1 class="title">Modeless</h1>
+    <h4 class="subtitle is-4">search, view, edit notes</h4>
     <div class="field">
         <div class="control">
             <input class="input is-medium" type="text" name="search"><br>
@@ -36,10 +37,13 @@ select[name='results'] { width: 800px; }
     <div class="content is-small">
         <h4>Keyboard Controls</h4>
         <p><em>Start typing</em> to incrementally search notes.</p>
-        <p><strong>ESC</strong> clears the search and starts over.</p>
+        <p><strong>ESC</strong> clears the search and starts over. <em>(Vimium users: CTRL-Backquote also works.)</em></p>
         <p><strong>CTRL-L</strong> returns to search box text.</p>
+        <p><strong>CTRL-X</strong> deletes the selected note.</p>
         <p><strong>Up/Down</strong> arrow keys to select from the matched notes.</p>
         <p><strong>ENTER</strong> to edit selected note, or create a new note.</p>
+        <p><em>Notes are saved automatically.</em></p>
+        <p><em>No data is sent to the server. All notes are stored locally in the browser's local storage.</em></p>
     </div>
 
     <footer class="footer">
