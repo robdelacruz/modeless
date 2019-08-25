@@ -78,6 +78,8 @@ document.addEventListener("keydown", function(e) {
 });
 
 search.addEventListener("keydown", function(e) {
+    console.log(`search keydown e.code = '${e.code}'`);
+
     if (e.code == "ArrowDown" || e.code == "ArrowUp") {
         e.preventDefault();
 
