@@ -170,11 +170,14 @@ function update_results(notes) {
         const note = notes[i];
         const option = document.createElement("option");
 
+        let option_text = "";
         if (note.body.trim() == "") {
-            option.innerText = `${note.title}`;
+            option_text = `${note.title}`;
         } else {
-            option.innerText = `${note.title} - ${note.body}`;
+            option_text = `${note.title} - ${note.body}`;
         }
+        option_text = option_text.substring(0, 160).replace(/\w+$/, "");
+        option.innerText = option_text;
         option.setAttribute("data-noteid", note.id);
         results.add(option);
     }
