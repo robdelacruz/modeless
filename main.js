@@ -205,10 +205,14 @@ function update_results(notes) {
     note_entry.setAttribute("data-noteid", "-1");
 }
 
+let _timer_id = 0;
 search.addEventListener("input", function(e) {
-    // Search matching notes and update UI.
-    const found_notes = search_all_notes(search.value);
-    update_results(found_notes);
+    clearTimeout(_timer_id);
+    _timer_id = setTimeout(function() {
+        // Search matching notes and update UI.
+        const found_notes = search_all_notes(search.value);
+        update_results(found_notes);
+    }, 250);
 });
 
 // Keep focus on search textbox always.
