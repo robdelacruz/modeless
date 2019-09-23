@@ -176,7 +176,7 @@ function update_results(notes) {
         } else {
             option_text = `${note.title} - ${note.body}`;
         }
-        option_text = option_text.substring(0, 160).replace(/\s+$/, "");
+        option_text = option_text.substring(0, 160)
         option.innerText = option_text;
         option.setAttribute("data-noteid", note.id);
         results.add(option);
