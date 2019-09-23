@@ -6,7 +6,7 @@
 <title>modeless</title>
 <link rel="stylesheet" type="text/css" href="bulma.css">
 <style>
-#container { width: 800px; }
+#container { width: 80%; }
 select[name='results'] { width: 800px; }
 select option { 
     white-space: nowrap;
@@ -19,36 +19,47 @@ select option {
 <div id="container" class="container">
     <h1 class="title">Modeless</h1>
     <h4 class="subtitle is-4">search, view, edit notes</h4>
-    <div class="field">
-        <div class="control">
-            <input class="input is-medium" type="text" name="search"><br>
-        </div>
-    </div>
-    <div class="field">
-        <div class="control">
-            <div class="select is-multiple is-small">
-                <select name="results" multiple size="4">
-                </select>
+    <div class="columns">
+        <div class="column is-three-fifths">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-small has-text-weight-semibold" type="text" name="search"><br>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <div class="select is-multiple is-small">
+                        <select name="results" multiple size="8">
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <textarea class="textarea is-small" rows="10" name="note" placeholder="note text here"></textarea>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="field">
-        <div class="control">
-            <textarea class="textarea is-small" rows="10" name="note" placeholder="note text here"></textarea>
+        <div class="column box has-text-grey has-background-light">
+            <div class="content is-small">
+                <h4>Keyboard Controls</h4>
+                <p>
+                <em>Start typing</em> to incrementally search notes.<br>
+                <strong>ESC</strong> clears the search and starts over.<br>
+                <strong>CTRL-L</strong> returns to search box text.<br>
+                <strong>CTRL-X</strong> deletes the selected note.<br>
+                <strong>Up/Down</strong> arrow keys to select from the matched notes.<br>
+                <strong>ENTER</strong> to edit selected note, or create a new note.<br>
+                <br>
+                <em>(Vimium users can use <strong>CTRL-Backquote</strong> in place of ESC)</em><br>
+                <br>
+                <em>Notes are saved automatically.</em><br>
+                <em>No data is sent to the server. All notes are stored locally in the browser's local storage.</em><br>
+                </p>
+            </div>
         </div>
-    </div>
-
-    <div class="content is-small">
-        <h4>Keyboard Controls</h4>
-        <p><em>Start typing</em> to incrementally search notes.</p>
-        <p><strong>ESC</strong> clears the search and starts over. <em>(Vimium users: CTRL-Backquote also works.)</em></p>
-        <p><strong>CTRL-L</strong> returns to search box text.</p>
-        <p><strong>CTRL-X</strong> deletes the selected note.</p>
-        <p><strong>Up/Down</strong> arrow keys to select from the matched notes.</p>
-        <p><strong>ENTER</strong> to edit selected note, or create a new note.</p>
-        <p><em>Notes are saved automatically.</em></p>
-        <p><em>No data is sent to the server. All notes are stored locally in the browser's local storage.</em></p>
     </div>
 
     <footer class="footer">
