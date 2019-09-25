@@ -1,0 +1,11 @@
+Bugs:
+- note edit entry loses focus on alt-tab
+
+Todo:
+- Add ability to create/select notebook.
+- Import/export cookie-jar text file.
+- Access local cookie-jar notes text file with local http server.
+
+- Replace CTRL-Backquote with CTRL-/
+- Replace CTRL-L to CTRL-SHIFT-L
+
